@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sprinkles-container"></div>
+
+    <!-- New Year Content -->
+    <div class="year prev_year">2024</div>
+    <div class="box">
+        <div class="inner-box"></div>
+    </div>
+    <div class="year next_year">2025</div>
+    <script>
+        // Sprinkle Generation
+        setTimeout(() => {
+            const container = document.querySelector('.sprinkles-container');
+        for (let i = 0; i < 50; i++) {
+            const sprinkle = document.createElement('div');
+            sprinkle.className = 'sprinkle';
+
+            // Randomize position, color, and animation duration
+            sprinkle.style.left = Math.random() * 100 + 'vw';
+            sprinkle.style.animationDuration = Math.random() * 3 + 2 + 's';
+            sprinkle.style.animationDelay = Math.random() * 5 + 's';
+
+            // Random colors
+            const colors = ['#ff4d4d', '#ffdb4d', '#4dff4d', '#4d94ff', '#b84dff', '#ff4da6', '#ff944d', '#4dffd2'];
+            sprinkle.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]);
+
+            container.appendChild(sprinkle);
+            
+        }
+        }, 5000);
+       
+    </script>
+</body>
+</html>

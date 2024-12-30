@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* New Year Elements */
+.box {
+    width: 60%;
+    height: 7%;
+    border: 2px solid white;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.year {
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: x-large;
+    z-index: 1;
+}
+
+.inner-box {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    animation: linearWhite 4s 1s 1 linear;
+}
+
+@keyframes linearWhite {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+.sprinkles-container{
+    position: absolute;
+    top: -10px;
+    left: -20px;
+}
+/* Sprinkle Animation */
+.sprinkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, white, var(--color));
+    border-radius: 50%;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
